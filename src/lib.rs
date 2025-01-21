@@ -296,7 +296,16 @@ mod tests {
 
     impl Entity<CURRENT_VERSION> for TestEntity {}
 
+    fn init_logging() {
+        // Only initialize if it hasn't been initialized already
+        let _ = tracing_subscriber::fmt()
+            .with_max_level(tracing::Level::DEBUG)
+            .with_test_writer()
+            .try_init();
+    }
+
     fn setup_storage() -> RedbStorage {
+        init_logging();
         let dir = tempdir().unwrap();
         RedbStorage::new(dir.path().join("test.redb")).unwrap()
     }
