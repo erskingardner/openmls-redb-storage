@@ -2,7 +2,7 @@
 
 # OpenMLS Redb Storage
 
-This crate provides a [Redb](https://github.com/Azle/redb) storage backend for OpenMLS, implementing the `openmls_traits` storage traits.
+This crate provides a [Redb](https://github.com/cberner/redb) storage backend for OpenMLS, implementing the `openmls_traits` storage traits.
 
 ## License
 
